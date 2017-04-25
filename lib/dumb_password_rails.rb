@@ -1,5 +1,5 @@
 require "dumb_password_rails/version"
-require "dumb_password_rails/"
+require 'active_model'
 
 module DumbPasswordRails
   	class DumbPasswordValidator < ActiveModel::EachValidator

@@ -1,4 +1,5 @@
 require "spec_helper"
+require 'active_model'
 
 RSpec.describe DumbPasswordRails do
   it "has a version number" do
