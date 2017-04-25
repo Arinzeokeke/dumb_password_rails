@@ -1,8 +1,8 @@
 require "dumb_password_rails/version"
 require 'active_model'
 
-module DumbPasswordRails
-  	class DumbPasswordValidator < ActiveModel::EachValidator
+#module DumbPasswordRails
+  	class DumbPasswordRailsValidator < ActiveModel::EachValidator
 		def self.dumb?(value)
 		 	passwordFile = File.open('/../resources/passwordlist.txt', 'r')
 		 	passwords = mf.readlines
@@ -22,4 +22,4 @@ module DumbPasswordRails
   		end
 	end
 
-end
+#end
