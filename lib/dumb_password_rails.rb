@@ -7,7 +7,7 @@ require 'active_model'
 			spec = Gem::Specification.find_by_name("dumb_password_rails")
 			gem_root = spec.gem_dir 
 		 	passwordFile = File.open(gem_root + '/resources/passwordlist.txt', 'r')
-		 	passwords = mf.readlines
+		 	passwords = passwordFile.readlines
 		 	passwords.map! {|d| d.strip}
 		 	passwords = con.sort
 		 	return true if passwords.include?(password)
