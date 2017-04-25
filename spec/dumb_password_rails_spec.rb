@@ -14,38 +14,60 @@ RSpec.describe DumbPasswordRails do
     expect(DumbPasswordRails::VERSION).not_to be nil
   end
 
-    describe "validation" do
+  describe "validation" do
 
     context "given the common passwords" do
       [
         "voyeur", "vsegda", "vulcan", "vvvv", "vvvvvv", "w_pass", "waffle", "wagner", "walker", "wallace", "wallet", "walleye", "wally", "walmart", "walnut", "walrus", "walter", "walton", "wanderer", "wang", "wanker", "wanking", "wanted", "wapbbs", "warcraft", "wareagle", "warez", "warhamme", "warhammer", "warlock", "warlord", "warner", "warning", "warren", "warrior", "warrior1", "warriors", "warthog", "wasabi", "washburn", "washingt", "washington", "wasser", "wassup", "wasted", "watch", "watcher", "water", "water1", "waterboy", "waterloo", "waters", "watford", "watson", "wayne", "wealth", "weare138", "wearing", "weasel", "weather", "weaver", "webber", "webhompas", "webmaste", "webmaster", "webster", "wedding", "weed", "weed420", "weekend", "weezer", "weiner"
         ].each do |password|
 
-        it "#{password.inspect} should not be valid" do
-          expect(TestUser.new(:password => password)).not_to be_valid
-        end
+          it "#{password.inspect} should not be valid" do
+            expect(TestUser.new(:password => password)).not_to be_valid
+          end
 
-        it "#{password.inspect} should fail the class tester" do
-          expect(DumbPasswordValidator.dumb?(password)).to be_truthy
-        end
+          it "#{password.inspect} should fail the class tester" do
+            expect(DumbPasswordValidator.dumb?(password)).to be_truthy
+          end
 
-      end
+        end
     end
 
     context "given the uncommon passwords" do
-      [
-        'gggfggfdd', 'gtrdswszz'].each do |password|
+        [
+          'gggfggfdd', 'gtrdswszz'].each do |password|
 
-        it "#{password.inspect} should  be valid" do
-          expect(TestUser.new(:password => password)).to be_valid
-        end
+            it "#{password.inspect} should  be valid" do
+              expect(TestUser.new(:password => password)).to be_valid
+            end
 
-        it "#{password.inspect} should pass the class tester" do
-          expect(DumbPasswordValidator.dumb?(password)).to be_falsy
-        end
+            it "#{password.inspect} should pass the class tester" do
+              expect(DumbPasswordValidator.dumb?(password)).to be_falsy
+            end
 
+          end
+
+
+    end
+
+  end
+
+  describe "error messages" do
+    context "when the message is not defined" do
+      subject { TestUser.new :password => 'jeffrey' }
+      before { subject.valid? }
+
+      it "should add the default message" do
+        expect(subject.errors[:password]).to include "Your password is too common. Use a more secure password"
       end
     end
 
+    context "when the message is defined" do
+      subject { TestUserWithMessage.new :password => 'jeffrey' }
+      before { subject.valid? }
+
+      it "should add the customized message" do
+        expect(subject.errors[:password]).to include "Hello World"
+      end
+    end
   end
 end
