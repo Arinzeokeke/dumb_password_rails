@@ -4,7 +4,7 @@ require 'active_model'
 #module DumbPasswordRails
   	class DumbPasswordRailsValidator < ActiveModel::EachValidator
 		def self.dumb?(value)
-			spec = Gem::Specification.find_by_name("your_gem_name")
+			spec = Gem::Specification.find_by_name("dumb_password_rails")
 			gem_root = spec.gem_dir 
 		 	passwordFile = File.open(gem_root + '/resources/passwordlist.txt', 'r')
 		 	passwords = mf.readlines
