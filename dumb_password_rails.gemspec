@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Okeke Arinze"]
   spec.email         = ["trent9002@gmail.com"]
 
-  spec.summary       = %q{An active model Validation gem that helps prevent users using common passwords}
-  spec.description   = %q{Prevent your users from using common passwords. Help them protect themselves. The list of common passwords were gotten }
+  spec.summary       = %q{An active model Validation gem that helps prevent users using vulnerable passwords}
+  spec.description   = %q{A password validator for Rails 3+ apps. Ensures that your users don't use passwords included in the top 10,000 worst passwords to protect their accounts from brute force attacks.  }
   spec.homepage      = "https://www.github.com/arinzeokeke/dumb_password_rails"
   spec.license       = "MIT"
 
