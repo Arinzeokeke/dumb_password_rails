@@ -1,6 +1,6 @@
 # dumb_password_rails
 
-A password validator for Rail3+ apps. Ensures that your users don't use passwords included in the top 10,000 worst passwords to protect their accounts from brute force attacks. [Read the wired article](http://www.wired.com/2013/12/web-semantics-the-ten-thousand-worst-passwords/)
+A password validator for Rails 3+ apps. Ensures that your users don't use passwords included in the top 10,000 worst passwords to protect their accounts from brute force attacks. [Read the wired article](http://www.wired.com/2013/12/web-semantics-the-ten-thousand-worst-passwords/)
 
 
 ## Installation
@@ -48,7 +48,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Arinzeokeke/dumb_password_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome!. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
