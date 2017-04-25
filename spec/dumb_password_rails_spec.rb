@@ -32,5 +32,20 @@ RSpec.describe DumbPasswordRails do
       end
     end
 
+    context "given the uncommon passwords" do
+      [
+        'gggfggfdd', 'gtrdswszz'].each do |password|
+
+        it "#{password.inspect} should  be valid" do
+          expect(TestUser.new(:password => password)).to be_valid
+        end
+
+        it "#{password.inspect} should pass the class tester" do
+          expect(DumbPasswordValidator.dumb?(password)).to be_falsy
+        end
+
+      end
+    end
+
   end
 end

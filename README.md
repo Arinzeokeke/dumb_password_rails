@@ -1,5 +1,7 @@
 # dumb_password_rails
 
+A password validator for Rail3+ apps. Ensures that your users don't use passwords included in the top 10,000 most used passwords to protect their accounts from brute force attacks. 
+
 ## Installation
 
 Add this line to your application's Gemfile:
