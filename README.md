@@ -22,11 +22,13 @@ Or install it yourself as:
 ## Usage
 
 Add this line to your model:
+
     validates :password, dumb_password: true
 
-(replace :password with your own custom virtual password attribute if yours is different. If you are using Devise, your virtual password attribute is :password.)
+Replace `:password` with your own custom virtual password attribute if yours is different. If you are using Devise, your virtual password attribute is `:password`.
 
-The default error message is "Your password is too common. Use a more secure password". If yo;d like to add your own custom message. 
+The default error message is `Your password is too common. Use a more secure password`. If you'd like to add your own custom message. 
+
     validates :password, dumb_password: {message: <YOUR CUSTOM MESSAGE>}
 
 
