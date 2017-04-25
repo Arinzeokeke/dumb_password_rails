@@ -4,7 +4,9 @@ require 'active_model'
 #module DumbPasswordRails
   	class DumbPasswordRailsValidator < ActiveModel::EachValidator
 		def self.dumb?(value)
-		 	passwordFile = File.open('/../resources/passwordlist.txt', 'r')
+			spec = Gem::Specification.find_by_name("your_gem_name")
+			gem_root = spec.gem_dir 
+		 	passwordFile = File.open(gem_root + '/resources/passwordlist.txt', 'r')
 		 	passwords = mf.readlines
 		 	passwords.map! {|d| d.strip}
 		 	passwords = con.sort
