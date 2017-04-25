@@ -9,7 +9,7 @@ require 'active_model'
 		 	passwordFile = File.open(gem_root + '/resources/passwordlist.txt', 'r')
 		 	passwords = passwordFile.readlines
 		 	passwords.map! {|d| d.strip}
-		 	passwords = con.sort
+		 	passwords = passwords.sort
 		 	return true if passwords.include?(password)
 		 	false
 		end
