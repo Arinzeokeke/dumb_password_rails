@@ -57,7 +57,7 @@ RSpec.describe DumbPasswordRails do
       before { subject.valid? }
 
       it "should add the default message" do
-        expect(subject.errors[:password]).to include "Your password is too common. Use a more secure password"
+        expect(subject.errors[:password]).to include "Your password is vulnerable. Use a more secure password"
       end
     end
 

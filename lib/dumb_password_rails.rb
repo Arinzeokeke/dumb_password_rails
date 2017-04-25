@@ -1,7 +1,6 @@
 require "dumb_password_rails/version"
 require 'active_model'
 
-#module DumbPasswordRails
   	class DumbPasswordValidator < ActiveModel::EachValidator
 		def self.dumb?(value)
 			spec = Gem::Specification.find_by_name("dumb_password_rails")
@@ -16,10 +15,8 @@ require 'active_model'
 
 		def validate_each(record, attribute, value)
     		if self.class.dumb?(value)
-    			message = "Your password is too common. Use a more secure password"
+    			message = "Your password is vulnerable. Use a more secure password"
       			record.errors.add(attribute, options[:message] || message || :invalid)
     		end
   		end
 	end
-
-#end
