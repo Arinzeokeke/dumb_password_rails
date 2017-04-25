@@ -1,6 +1,7 @@
 # dumb_password_rails
 
-A password validator for Rail3+ apps. Ensures that your users don't use passwords included in the top 10,000 most used passwords to protect their accounts from brute force attacks. 
+A password validator for Rail3+ apps. Ensures that your users don't use passwords included in the top 10,000 worst passwords to protect their accounts from brute force attacks. [Read the wired article](http://www.wired.com/2013/12/web-semantics-the-ten-thousand-worst-passwords/)
+
 
 ## Installation
 
@@ -36,6 +37,12 @@ The default error message is "Your password is too common. Use a more secure pas
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests.
+
+## Inspiration
+
+* [Eugene Mutai](https://github.com/kn9ts/dumb-passwords)
+* [Prosper Otemiyuwa](https://github.com/unicodeveloper/laravel-password)
+
 
 ## Contributing
 
