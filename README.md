@@ -1,4 +1,4 @@
-# DumbPasswordRails
+# dumb_password_rails
 
 ## Installation
 
