@@ -6,7 +6,7 @@ module DumbPasswordRails
 		 passwords.map! {|d| d.strip}
 		 passwords = con.sort
 		 if passwords.include?(password)
-		 	errors.add("Your Username is too common. Use a more secure password")
+		 	errors.add(:password, "Your password is too common. Use a more secure password")
 		 end
 	end
 
