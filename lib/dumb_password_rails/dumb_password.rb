@@ -1,10 +1,13 @@
 module DumbPasswordRails
-	module ClassMethods
-		
-	end
-	
-	module InstanceMethods
-		
+
+	def read_passwords
+		 passwordFile = File.open('/../../resources/passwordlist.txt', 'r')
+		 passwords = mf.readlines
+		 passwords.map! {|d| d.strip}
+		 passwords = con.sort
+		 if passwords.include?(password)
+		 	errors.add("Your Username is too common. Use a more secure password")
+		 end
 	end
 
 end
