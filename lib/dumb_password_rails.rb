@@ -10,7 +10,7 @@ require 'active_model'
 		 	passwords = passwordFile.readlines
 		 	passwords.map! {|d| d.strip}
 		 	passwords = passwords.sort
-		 	return true if passwords.include?(password)
+		 	return true if passwords.include?(value)
 		 	false
 		end
 
