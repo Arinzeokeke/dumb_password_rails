@@ -9,8 +9,7 @@ require 'active_model'
 		 	passwords = passwordFile.readlines
 		 	passwords.map! {|d| d.strip}
 		 	passwords = passwords.sort
-		 	return true if passwords.include?(value)
-		 	false
+		 	passwords.include?(value)
 		end
 
 		def validate_each(record, attribute, value)

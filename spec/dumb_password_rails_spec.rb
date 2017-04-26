@@ -53,7 +53,7 @@ RSpec.describe DumbPasswordRails do
 
   describe "error messages" do
     context "when the message is not defined" do
-      subject { TestUser.new :password => 'jeffrey' }
+      subject { TestUser.new :password => 'ROBERT' }
       before { subject.valid? }
 
       it "should add the default message" do
